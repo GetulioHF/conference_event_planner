@@ -9,7 +9,6 @@ const ConferenceEvent = () => {
     const venueItems = useSelector((state) => state.venue);
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
-
     
     const handleToggleItems = () => {
         console.log("handleToggleItems called");
@@ -113,7 +112,7 @@ const ConferenceEvent = () => {
             {venueItems[index].quantity > 0 ? ` ${venueItems[index].quantity}` : "0"}
           </span>
           <button
-            className={remainingAuditoriumQuantity === 0? "btn-success btn-disabled" : "btn-success btn-plus"}
+            className={remainingAuditoriumQuantity === 0 ? "btn-success btn-disabled" : "btn-success btn-plus"}
             onClick={() => handleAddToCart(index)}
           >
             &#43;
@@ -122,7 +121,7 @@ const ConferenceEvent = () => {
         ) : (
           <div className="button_container">
            <button
-              className={venueItems[index].quantity ===0 ? " btn-warning btn-disabled" : "btn-warning btn-plus"}
+              className={venueItems[index].quantity === 0 ? " btn-warning btn-disabled" : "btn-warning btn-plus"}
               onClick={() => handleRemoveFromCart(index)}
             >
                &#8211;
