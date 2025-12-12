@@ -86,6 +86,8 @@ const ConferenceEvent = () => {
 
     const avTotalCost = calculateTotalCost("av");
 
+    const mealsTotalCost = calculateTotalCost("meals"); // Getulio
+
     const navigateToProducts = (idType) => {
         if (idType == '#venue' || idType == '#addons' || idType == '#meals') {
           if (showItems) { // Check if showItems is false
@@ -207,6 +209,8 @@ const ConferenceEvent = () => {
                             </div>
 
                             {/* Meal Section */}
+
+                            <div className="total_cost">Total Cost: {mealsTotalCost}</div> 
 
                             <div id="meals" className="venue_container container_main">
 
